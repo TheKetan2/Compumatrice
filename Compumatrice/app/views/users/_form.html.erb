@@ -1,0 +1,49 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :"Username" %><br>
+    <%= f.text_field :username,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Password" %><br>
+    <%= f.password_field :password,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Confirm Password" %><br>
+    <%= f.password_field :password_confirmation,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"First Name" %><br>
+    <%= f.text_field :f_name,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Last Name" %><br>
+    <%= f.text_field :lname,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Email" %><br>
+    <%= f.text_field :email,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Phone No" %><br>
+    <%= f.number_field :phone,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Location"%><br>
+    <%= f.text_field :location,class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Save",class:"btn btn-success form-control pull right col-md-2"%>
+    
+<% end %>
