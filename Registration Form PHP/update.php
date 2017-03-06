@@ -10,7 +10,7 @@ $err_email=null;
 $err_phone=null;
 $err_location=null;
 
-
+$valid_input = true;
 
     $id = (int)$_GET['id'];
      //echo $id;
@@ -81,7 +81,7 @@ $err_location=null;
     
     if($valid_input){
         //
-    $sql = "UPDATE `regform`.`customers` SET `username` = '$username', `password` = '$password', `f_name` = '$f_name', `email` = '$email', `phone` = '$phone', `location` = '$location' WHERE `customers`.`id` =  ".$id;
+    $sql = "UPDATE `regform`.`customers` SET `username` = '$username', `password` = '$password', `f_name` = '$f_name',`l_name`='$l_name', `email` = '$email', `phone` = '$phone', `location` = '$location' WHERE `customers`.`id` = $id";
 
     mysqli_query($con,$sql);
     header('Location: index.php');
