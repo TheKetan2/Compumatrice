@@ -74,8 +74,9 @@ $valid_input = true;
         $valid_input = false;
     }
     else{
-        if(strpos( $email, "@" ) !== 1){
+        if(strpos( $email, "@" ) < 1){
             $err_email = "Enter valid email.";
+            $valid_input = false;
         }
     }
     
@@ -119,7 +120,8 @@ $valid_input = true;
         
     <div class="panel panel-success">
         <div class="panel-heading"> 
-            <h1>Update Details</h1>
+            <h1>Update Details<a href="index.php" class="btn btn-success pull-right">Home</a></h1>    
+
         </div>
 
 
@@ -128,7 +130,10 @@ $valid_input = true;
     <div class="panel-body">
         <div class="form-group">
     <label for="user_Username" >Username</label>
-    <input class="form-control form-control-lg" type="text" name="username" id="user_username" value="<?php echo $row['username']; ?>" />
+    <input class="form-control form-control-lg" type="text" name="username" id="user_username" value="<?php echo $row['username'];?>" required
+           oninvalid="this.setCustomValidity('Enter username.')"
+           oninput="setCustomValidity('')"
+           />
                   <span><?php echo $err_user ?></span>
 
 
@@ -136,53 +141,74 @@ $valid_input = true;
   <div class="form-group">
     <label for="user_Password" >Password</label>
     
-    <input class="form-control form-control-lg" type="password" name="password" id="user_password" value="<?php echo $row['password']; ?>" />
+    <input class="form-control form-control-lg" type="password" name="password" id="user_password" value="<?php echo $row['password']; ?>" required 
+           oninvalid="this.setCustomValidity('Enter password.')"
+           oninput="setCustomValidity('')"
+           />
           <span><?php echo $err_pass ?></span>
 
   </div>
   <div class="form-group">
     <label for="user_Confirm Password">Confirm password</label>
-    <input class="form-control" type="password" name="password_confirmation" id="user_password_confirmation" value="<?php echo $row['password']; ?>" />
+    <input class="form-control" type="password" name="password_confirmation" id="user_password_confirmation" value="<?php echo $row['password']; ?>" required
+           oninvalid="this.setCustomValidity('Confirm Password.')"
+           oninput="setCustomValidity('')"
+           />
       
           <span><?php echo $err_pass_confirm ?></span>
 
   </div>
   <div class="form-group">
     <label for="user_First Name">First name</label>
-    <input class="form-control" type="text" name="f_name" id="user_f_name" value="<?php echo $row['f_name']; ?>"/>
+    <input class="form-control" type="text" name="f_name" id="user_f_name" value="<?php echo $row['f_name']; ?>" required
+           oninvalid="this.setCustomValidity('Enter name.')"
+           oninput="setCustomValidity('')"
+           />
             <span><?php echo $err_f_name ?></span>
 
   </div>
   <div class="form-group">
     <label for="user_Last Name">Last name</label>
-    <input class="form-control" type="text" name="l_name" id="user_lname" value="<?php echo $row['l_name']; ?>"/>
+    <input class="form-control" type="text" name="l_name" id="user_lname" value="<?php echo $row['l_name'];?>" required
+           oninvalid="this.setCustomValidity('Enter name.')"
+           oninput="setCustomValidity('')"
+           />
       
   </div>
   <div class="form-group">
     <label for="user_Email">Email</label>
-    <input class="form-control" type="text" name="email" id="user_email" value="<?php echo $row['email']; ?>"/>
+    <input class="form-control" type="email" name="email" id="user_email" value="<?php echo $row['email']; ?>" required
+           oninvalid="this.setCustomValidity('Enter email.')"
+           oninput="setCustomValidity('')"
+           />
             <span><?php echo $err_l_name ?></span>
 
   </div>
   <div class="form-group">
     <label for="user_Phone No">Phone no</label>
-    <input class="form-control" type="number" name="phone" id="user_phone" value="<?php echo $row['phone']; ?>"/>
+    <input class="form-control" type="number" name="phone" id="user_phone" value="<?php echo $row['phone'];?>" required
+           oninvalid="this.setCustomValidity('Enter phone.')"
+           oninput="setCustomValidity('')"
+           />
             <span><?php echo $err_phone ?></span>
 
   </div>
   <div class="form-group">
     <label for="user_Location">Location</label>
-    <input class="form-control" type="text" name="location" id="user_location" value="<?php echo $row['location']; ?>"/>
+    <input class="form-control" type="text" name="location" id="user_location" value="<?php echo $row['location']; ?>"
+           required
+           oninvalid="this.setCustomValidity('Enter location.')"
+           oninput="setCustomValidity('')"
+           />
       
             <span><?php echo $err_location ?></span>
 
   </div>
-        <input name="id" type=hidden value="<?php echo $row['id'] ?>"/>
+        <input name="id" type=hidden value="<?php echo $row['id'] ?>" required/>
   <div class="form-group">
     <!--a href="up.php?id=<?php echo $id ?>" class="btn btn-success">Update </a>
     <a href="index.php" class="btn btn-success"> Home</a-->
     <input type="submit" name="update" value="Update" class="btn btn-success  pull-left col-md-2" />
-    <a href="index.php" class="btn btn-success pull-right">Home</a>
     <!--input type="submit" name="home" value="Home" class="btn btn-success  pull-right col-md-2" /-->
   
         

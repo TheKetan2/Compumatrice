@@ -15,6 +15,10 @@ $valid_input = true;
 if(isset($_POST['save']))
 {
  // variables for input data
+    
+    
+    
+    
     $username = $_POST['username'];
     $password = $_POST['password'];
     $confirm_password = $_POST['password_confirmation'];
@@ -110,7 +114,7 @@ if(isset($_POST['reset'])){
         
         <div class="panel panel-success">
         <div class="panel-heading"> 
-<h1>Registration Form</h1>        
+<h1>Registration Form<a href="index.php" class="btn btn-success pull-right">Home</a> </h1>        
             </div>
 
 <div class="panel-body">
@@ -118,43 +122,66 @@ if(isset($_POST['reset'])){
 
   <div class="form-group">
     <label for="user_Username">Username</label><br>
-    <input class="form-control" type="text" name="username" id="user_username" />
-      <span><?php echo $err_user ?></span>
+    <input class="form-control" type="text" name="username" id="user_username" required
+           oninvalid="this.setCustomValidity('Enter Username.')"
+           oninput="setCustomValidity('')"
+/>
   </div>
   <div class="form-group">
     <label for="user_Password">Password</label><br>
-    <input class="form-control" type="password" name="password" id="user_password" />
-    <span><?php echo $err_pass ?></span>
+    <input class="form-control" type="password" name="password" id="user_password" required 
+           oninvalid="this.setCustomValidity('Enter password.')"
+           oninput="setCustomValidity('')"
+
+/>
   </div>
   <div class="form-group">
     <label for="user_Confirm Password">Confirm password</label><br>
-    <input class="form-control" type="password" name="password_confirmation" id="user_password_confirmation" />
+    <input class="form-control" type="password" name="password_confirmation" id="user_password_confirmation" required
+           oninvalid="this.setCustomValidity('<?php echo $err_pass_confirm ?>')"
+           oninput="setCustomValidity('')"
+
+           />
     <span><?php echo $err_pass_confirm ?></span>
   </div>
   <div class="form-group">
     <label for="user_First Name">First name</label><br>
-    <input class="form-control" type="text" name="f_name" id="user_f_name" />
-      <span><?php echo $err_f_name ?></span>
+    <input class="form-control" type="text" name="f_name" id="user_f_name" required
+           oninvalid="this.setCustomValidity('Enter First Name.')"
+           oninput="setCustomValidity('')"
+           />
   </div>
   <div class="form-group">
     <label for="user_Last Name">Last name</label><br>
-    <input class="form-control" type="text" name="l_name" id="user_lname" />
-      <span><?php echo $err_l_name ?></span>
+    <input class="form-control" type="text" name="l_name" id="user_lname" required
+           oninvalid="this.setCustomValidity('Enter Last.')"
+           oninput="setCustomValidity('')"
+           />
   </div>
   <div class="form-group">
     <label for="user_Email">Email</label><br>
-    <input class="form-control" type="text" name="email" id="user_email" />
-      <span><?php echo $err_email ?></span>
+    <input class="form-control" type="email" name="email" id="user_email" required
+           oninvalid="this.setCustomValidity('Enter email.')"
+           oninput="setCustomValidity('')"
+           />
+          <span><?php echo $err_email ?></span>
+
   </div>
   <div class="form-group">
     <label for="user_Phone No">Phone no</label><br>
-    <input class="form-control" type="number" name="phone" id="user_phone" />
-      <span><?php echo $err_phone ?></span>
+    <input class="form-control" type="number" name="phone" id="user_phone" required
+           oninvalid="this.setCustomValidity('Enter phone number.')"
+           oninput="setCustomValidity('')"
+           />
+      
   </div>
   <div class="form-group">
     <label for="user_Location">Location</label><br>
-    <input class="form-control" type="text" name="location" id="user_location" />
-      <span><?php echo $err_location ?></span>
+    <input class="form-control" type="text" name="location" id="user_location" required
+           oninvalid="this.setCustomValidity('Enter location.')"
+           oninput="setCustomValidity('')"
+           />
+      
   </div>
   <div class="form-group">
     <input type="submit" name="save" value="Save" class="btn btn-success  pull-left col-md-2" />
