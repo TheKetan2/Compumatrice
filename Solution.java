@@ -21,7 +21,7 @@ return len;
 }
 public static void main(String args[]){
 	
-System.out.println(bigSentence("We test coders.You all are doing great job! Give us a try?"));
+System.out.println(bigSentence("We test coders.You all are doing a great job! Give us a try?"));
 
 	}
 }
