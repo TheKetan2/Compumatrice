@@ -1,5 +1,5 @@
 /*
-Name: Ketan D.Ramteke
+Name: Ketan D. Ramteke
 Question No.2.
 */
 import java.util.*;
