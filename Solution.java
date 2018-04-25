@@ -1,4 +1,4 @@
-/*w
+/*
 Name: Ketan D. Ramteke
 Question No.2
 */
