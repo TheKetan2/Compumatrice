@@ -1,6 +1,6 @@
 /*
 Name: Ketan D. Ramteke
-Question No.2
+Question No.2 d
 */
 
 import java.util.*;
